@@ -1,6 +1,8 @@
 import cv2
 import pytesseract
 
+pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'  # Path to tesseract on your computer
+
 # Function to perform OCR detection on an image
 def perform_ocr(image_path):
     # Read the image
