@@ -1,2 +1,6 @@
 kyc
 .env
+ipynb files/
+
+#mac folder config
+.DS_Store
