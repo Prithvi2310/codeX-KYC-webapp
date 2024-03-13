@@ -1,5 +1,6 @@
 # dependencies
-/*/.venv
+/*/.venv/
+/*/node_modules/
 
 kyc
 .env
