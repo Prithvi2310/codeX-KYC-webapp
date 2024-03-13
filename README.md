@@ -1,6 +1,6 @@
 # KYCExpress
 An online video KYC solution specifically constructed with compliance to Standard Chartered's needs
-[!logo](images/logo.png)
+![logo](images/logo.png)
 
 
 ## About
