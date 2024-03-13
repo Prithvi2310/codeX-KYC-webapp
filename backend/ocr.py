@@ -16,17 +16,17 @@ def perform_ocr(image_path):
 
 def ocr_result():
     # Perform OCR on the user's live photograph
-    live_photograph_text = perform_ocr('photos/face/captured_photo.jpg')
+    live_photograph_text = perform_ocr('photos/live_photo.jpg')
     print("Live Photograph OCR Text:")
     print(live_photograph_text)
 
     # Perform OCR on the Aadhaar card front
-    pan_card_text = perform_ocr('photos/aadhaar_front/front.jpg')
+    pan_card_text = perform_ocr('photos/aadhaar_front.jpg')
     print("\nAadhaar Card Front OCR Text:")
     print(pan_card_text)
 
     # Perform OCR on the Aadhaar card back
-    aadhaar_card_text = perform_ocr('photos/aadhaar_back/back.jpg')
+    aadhaar_card_text = perform_ocr('photos/aadhaar_back.jpg')
     print("\nAadhaar Card Back OCR Text:")
     print(aadhaar_card_text)
 
