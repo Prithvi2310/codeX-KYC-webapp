@@ -14,25 +14,23 @@ def perform_ocr(image_path):
 
     return detected_text
 
-# Example usage:
-# Replace 'image_path' with the path to your image file
+def ocr_result():
+    # Perform OCR on the user's live photograph
+    live_photograph_text = perform_ocr('photos/face/captured_photo.jpg')
+    print("Live Photograph OCR Text:")
+    print(live_photograph_text)
 
-# Perform OCR on the user's live photograph
-live_photograph_text = perform_ocr('live_photograph.jpg')
-print("Live Photograph OCR Text:")
-print(live_photograph_text)
+    # Perform OCR on the Aadhaar card front
+    pan_card_text = perform_ocr('photos/aadhaar_front/front.jpg')
+    print("\nAadhaar Card Front OCR Text:")
+    print(pan_card_text)
 
-# Perform OCR on the PAN card
-pan_card_text = perform_ocr('pan_card.jpg')
-print("\nPAN Card OCR Text:")
-print(pan_card_text)
+    # Perform OCR on the Aadhaar card back
+    aadhaar_card_text = perform_ocr('photos/aadhaar_back/back.jpg')
+    print("\nAadhaar Card Back OCR Text:")
+    print(aadhaar_card_text)
 
-# Perform OCR on the Aadhaar card
-aadhaar_card_text = perform_ocr('aadhaar_card.jpg')
-print("\nAadhaar Card OCR Text:")
-print(aadhaar_card_text)
-
-# Perform OCR on the signature
-signature_text = perform_ocr('signature.jpg')
-print("\nSignature OCR Text:")
-print(signature_text)
+    # Perform OCR on the signature
+    #signature_text = perform_ocr('signature.jpg')
+    #print("\nSignature OCR Text:")
+    #print(signature_text)
