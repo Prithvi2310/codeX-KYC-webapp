@@ -27,8 +27,8 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   font-family: "Lato", sans-serif;
-  color: var(--spanish-gray);
-  background-color: var(--eerie-black);
+  color: #ffffff;
+  background-color: #242C3F;
 }
 
 img {
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn {
-  background: var(--gradient);
+  background: #0072AA;
   padding: 0.6rem 1.2rem;
   color: var(--black) !important;
   border-radius: 0.5rem;

@@ -70,7 +70,7 @@ function Camera() {
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', backgroundColor: '#242C3F' }}> {/* Change background color here */}
       <div style={{ position: 'relative', display: 'inline-block' }}>
         {/* Render captured image on top of live display when available */}
         {imageData && (
@@ -97,7 +97,7 @@ function Camera() {
           {!showLiveDisplay && (
             <button onClick={retakeImage} className="btn" style={{ marginRight: '10px' }}>Retake</button>
           )}
-          <Link to="/document" className="btn" onClick={handleNextButtonClick}>Next</Link>
+          <Link to="/kyc" className="btn" onClick={handleNextButtonClick}>Next</Link>
         </div>
       </div>
       {/* Conditionally render the "uploaded" message */}
