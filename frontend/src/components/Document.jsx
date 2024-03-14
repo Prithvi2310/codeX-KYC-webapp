@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Document(props) {
     // const [isBkCameraOpen, setIsBkCameraOpen] = useState(false);
-    const [cardImage, setCardImage] = useState();
+    //const [cardImage, setCardImage] = useState();
     //const token = localStorage.getItem('token');
     const [popoverOpen, setPopoverOpen] = useState(false);
     const toggle = () => setPopoverOpen(!popoverOpen);
@@ -54,15 +54,27 @@ export default function Document(props) {
 
     const id_f = localStorage.getItem('imgId1');
     const id_b = localStorage.getItem('imgId2');
-    const [isFull, setIsFull] = useState(false);
+    //const [isFull, setIsFull] = useState(false);
     //  const who1 = JSON.parse(localStorage.getItem('data'));
     const [whichId, setWhichId] = useState(idwhich ? idwhich : '');
-    function handleChange_close() {
+    {/*function handleChange_close() {
         //setIsBkCameraOpen(false);
         setCardImage(undefined);
         setIsFull(false);
-    }
+    } */}
     // setWhichId(idwhich);
+
+    const [formData, setFormData] = useState({
+        panCard: '',
+        aadharCard: '',
+        passport: '',
+        photo: '',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
     useEffect(() => {
         localStorage.setItem('whichid', whichId);
@@ -70,7 +82,7 @@ export default function Document(props) {
         // console.log(whichId);
         return (
             <Fragment>
-                <div style={{ marginTop: -20, marginLeft: 90 }}>
+                <div style={{ marginTop: 20, marginLeft: 130 }}>
                     <span>
                         <Icon.Info id="Popover1" type="button" />
                         Tips
@@ -92,7 +104,7 @@ export default function Document(props) {
                     </Popover>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <h5
+                    <h1
                         style={{
                             textAlign: 'center',
                             color: 'green',
@@ -101,13 +113,13 @@ export default function Document(props) {
                         }}
                     >
                         Upload ID Card
-                    </h5>
-                    <h6 style={{ color: 'Gray', marginLeft: 90 }}>
+                    </h1>
+                    <h4 style={{ color: 'white', marginLeft: 90 }}>
                         Please upload a Government ID for KYC verification
-                    </h6>
+                    </h4>
                     <div
                         style={{
-                            fontSize: 12,
+                            fontSize: 16,
                             color: 'Gray',
                             textAlign: 'center',
                             marginLeft: 85,
@@ -123,7 +135,7 @@ export default function Document(props) {
                     <FormControl className={classes.formControl}>
                         <InputLabel
                             id="demo-simple-select-autowidth-label"
-                            style={{ marginLeft: -20, color: 'Gray' }}
+                            style={{ marginLeft: -20, color: 'white' }}
                         >
                             Select Id
                         </InputLabel>
@@ -154,119 +166,13 @@ export default function Document(props) {
                         </Select>
                     </FormControl>
                 </div>
-                <div className="selfie_page">
-                    {id_f && id_b ? null : (
-                        <div className="id_logo">
-                            {/*<img
-                                className="idcard"
-                                src={idcard}
-                                alt="idcard"
-                                style={{
-                                    marginTop: -35,
-                                    marginLeft: 15,
-                                }}
-                              ></img>*/}
-                        </div>
-                    )}
-                    <div className="">
-                        <Root>
-                            <FullScreen
-                                handle={useFullScreenHandle()}
-                                onChange={(isFull) => setIsFull(isFull)}
-                            >
-                                {/*{isBkCameraOpen && isFull && (
-                                    <Camera
-                                        onCapture={(blob) => setCardImage(blob)}
-                                        onClear={() => setCardImage(undefined)}
-                                        changekaru={handleChange_close}
-                                    />
-                                )} */}
-                                {cardImage && (
-                                    <div>
-                                        <h2>Preview</h2>
-                                        <Preview
-                                            src={
-                                                cardImage &&
-                                                URL.createObjectURL(cardImage)
-                                            }
-                                        />
-                                    </div>
-                                )}
-                            </FullScreen>
-                            <div className="camera-btn1">
-                                <button
-                                    className="button_id"
-                                    onClick={() => {
-                                        //setIsBkCameraOpen(true);
-                                        setIsFull(true);
-                                    }}
-                                    style={{
-                                        marginLeft: 35,
-                                        fontSize: 16,
-                                        width: 120,
-                                    }}
-                                >
-                                    ID Scanner
-                                </button>
-                                {idwhich && id_f && id_b ? (
-                                    <Link
-                                        to="/video"
-                                        onClick={
-                                            idwhich && id_f && id_b
-                                                ? null
-                                                : (e) => e.preventDefault()
-                                        }
-                                    >
-                                        <button
-                                            className="button_id"
-                                            style={{
-                                                fontSize: 16,
-                                                width: 120,
-                                            }}
-                                            disabled={
-                                                idwhich && id_f && id_b
-                                                    ? false
-                                                    : true
-                                            }
-                                        >
-                                            Next Page
-                                        </button>
-                                    </Link>
-                                ) : null}
-                                {/* <button
-                                        className="button"
-                                        onClick={() => {
-                                            setIsBkCameraOpen(false);
-                                            setCardImage(undefined);
-                                            setIsFull(false);
-                                        }}
-                                    >
-                                        Close Camera
-                                    </button> */}
-                            </div>
-                        </Root>
-                        <GlobalStyle />
-                    </div>
-                    {/*<div className="header">
-                        <img
-                            className="classid_f"
-                            src={`data:image/jpeg;base64,${id_f}`}
-                            height="150"
-                            width="240"
-                            alt="Front"
-                        />
-                        <br></br>
-                        <br></br>
 
-                        <img
-                            className="classid_b"
-                            src={`data:image/jpeg;base64,${id_b}`}
-                            height="150"
-                            width="240"
-                            alt="Back"
-                        />
-                                  </div>*/}
+                <div>
+                    <input type="file" name="photo" accept="image/*" onChange={handleChange} />
                 </div>
+
+                <a href="/capture" className="btn">Capture</a>
+                
             </Fragment>
         );
 }

@@ -1,63 +1,110 @@
 import React, { useState } from 'react';
 
 const Form = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [middleName, setMiddleName] = useState('');
+  const [dob, setDob] = useState('');
+  const [gender, setGender] = useState('');
+  const [employmentStatus, setEmploymentStatus] = useState('');
+  const [address, setAddress] = useState('');
+  const [consent, setConsent] = useState(false);
 
-    const [formData, setFormData] = useState({
-        name: '',
-        phoneNumber: '',
-        aadharNumber: '',
-        email: '',
-        panCard: '',
-        accountNumber: '',
-        photo: '',
-    });
-    
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData); // You can process or submit the form data here
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+  };
 
   return (
-    <div className="container"> {/* Add this container */}
-      <h1>KYC Web App</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Name:</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label>Phone Number:</label>
-          <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label>Aadhar Card Number:</label>
-          <input type="text" name="aadharNumber" value={formData.aadharNumber} onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label>Email:</label>
-          <input type="text" name="email" value={formData.email} onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label>PAN Card:</label>
-          <input type="text" name="panCard" value={formData.panCard} onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label>Account Number:</label>
-          <input type="text" name="accountNumber" value={formData.accountNumber} onChange={handleChange} />
-        </div>
-        <div className="form-group">
-          <label>Photo:</label>
-          <input type="file" name="photo" accept="image/*" onChange={handleChange} />
-        </div>
-        <button type="submit">Next</button>
-      </form>
-    </div>
-  )
-}
+    <form onSubmit={handleSubmit}>
+      <h2>KYCexpress</h2>
+      <h3>Personal Information</h3>
+      <div>
+        <label htmlFor="firstName">
+          *First Name:
+          <input
+            type="text"
+            id="firstName"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="lastName">
+          *Last Name:
+          <input
+            type="text"
+            id="lastName"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="middleName">
+          Middle Name:
+          <input
+            type="text"
+            id="middleName"
+            value={middleName}
+            onChange={(e) => setMiddleName(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="dob">
+          Date of Birth (dd/mm/yyyy):
+          <input
+            type="text"
+            id="dob"
+            value={dob}
+            onChange={(e) => setDob(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="gender">
+          Gender:
+          <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+            <option value=""></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label htmlFor="employmentStatus">
+          Employment Status:
+          <input
+            type="text"
+            id="employmentStatus"
+            value={employmentStatus}
+            onChange={(e) => setEmploymentStatus(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="address">
+          Address:
+          <textarea id="address" value={address} onChange={(e) => setAddress(e.target.value)}></textarea>
+        </label>
+      </div>
+      <div>
+        <label htmlFor="consent">
+          <input
+            type="checkbox"
+            id="consent"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+          />
+          Consent
+        </label>
+      </div>
+      <button type="submit">SUBMIT</button>
+    </form>
+  );
+};
 
-export default Form
+export default Form;
