@@ -6,3 +6,7 @@ Currently Know Your Customer (KYC) is largely an offline and manual process OR n
 
 ## Purpose
 We are team CodeX and we have developed a web application for Standard Chartered Hackathon
+
+## Find the demo video below👇
+https://github.com/Prithvi2310/codeX-KYC-webapp/assets/103898139/4e2abe0d-7214-4c93-a90f-c989513abfff
+
