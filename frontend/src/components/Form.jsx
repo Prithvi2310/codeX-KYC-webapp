@@ -15,7 +15,7 @@ const Form = () => {
     e.preventDefault();
     // Handle form submission here
   };
-
+  //Change done 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', margin: '20px' }}>
       <h2 style={{color: 'black'}}>KYC Express</h2>
