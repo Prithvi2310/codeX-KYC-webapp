@@ -23,7 +23,8 @@ const Hero = () => {
                 <p>
                     Unlock the future of Identity Verification with our interaive KYC platform
                 </p>
-                <a href="/document" className="btn">Try Now</a>
+                <a href="/document" className="btn" >Start Now</a>
+
             </div>
         </div>
     </section>
