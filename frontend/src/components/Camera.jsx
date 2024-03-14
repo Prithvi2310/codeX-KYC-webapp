@@ -70,20 +70,22 @@ function Camera() {
   }
 
   return (
-    <div style={{ textAlign: 'center', backgroundColor: '#242C3F' }}> {/* Change background color here */}
+    <div style={{ textAlign: 'center', backgroundColor: '#BAD6EB', paddingTop: '20px' }}>
+      <h2 style={{ color: 'black', paddingTop: '10px', paddingBottom: '15px' }}>Capture Your Photo</h2>
+
       <div style={{ position: 'relative', display: 'inline-block' }}>
         {/* Render captured image on top of live display when available */}
         {imageData && (
-          <img src={imageData} alt="Captured Image" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', maxWidth: '100%', maxHeight: '100%' }} />
+          <img src={imageData} alt="Captured Image" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', maxWidth: '100%', maxHeight: '100%', transform: 'scaleX(-1)' }} />
         )}
         {/* Always render live video display */}
-        <video ref={videoRef} width="640" height="480" style={{ display: showLiveDisplay ? 'block' : 'none' }} />
+        <video ref={videoRef} width="640" height="480" style={{ display: showLiveDisplay ? 'block' : 'none', transform: 'scaleX(-1)' }} />
         <canvas ref={canvasRef} width="640" height="480" style={{ display: 'none' }} />
       </div>
       <div style={{ marginTop: '20px' }}>
         {/* Show "Capture Image" button if live display is visible */}
         {showLiveDisplay && (
-          <button onClick={captureImage} className="btn" style={{ marginRight: '10px' }}>Capture Image</button>
+          <button onClick={captureImage} className="btn" style={{ marginRight: '10px', marginBottom:'25px' }}>Capture Image</button>
         )}
         {/* Show captured image preview below */}
         {imageData && (
@@ -97,7 +99,7 @@ function Camera() {
           {!showLiveDisplay && (
             <button onClick={retakeImage} className="btn" style={{ marginRight: '10px' }}>Retake</button>
           )}
-          <Link to="/kyc" className="btn" onClick={handleNextButtonClick}>Next</Link>
+        <Link to="/kyc" className="btn" onClick={handleNextButtonClick}>Next</Link>
         </div>
       </div>
       {/* Conditionally render the "uploaded" message */}

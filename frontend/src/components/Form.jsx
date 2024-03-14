@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CloudOff } from 'react-feather';
 
 const Form = () => {
   const [firstName, setFirstName] = useState('');
@@ -17,7 +18,7 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', margin: '20px' }}>
-      <h2>KYCexpress</h2>
+      <h2 style={{color: 'black'}}>KYC Express</h2>
       <h3>Personal Information</h3>
       <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '10px', alignItems: 'center', width: '100%' }}>
         <label htmlFor="firstName">*First Name:</label>
@@ -34,7 +35,7 @@ const Form = () => {
           id="lastName"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          style={{ width: '30%', fontSize: '14px', backgroundColor: '#BAD6EB', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
+          style={{ width: '30%', fontSize: '14px', backgroundColor: '#ffffff', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
         />
         <label htmlFor="middleName">Middle Name:</label>
         <input
@@ -42,7 +43,7 @@ const Form = () => {
           id="middleName"
           value={middleName}
           onChange={(e) => setMiddleName(e.target.value)}
-          style={{ width: '30%', fontSize: '14px', backgroundColor: '#BAD6EB', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
+          style={{ width: '30%', fontSize: '14px', backgroundColor: '#ffffff', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
         />
         <label htmlFor="dob">Date of Birth (dd/mm/yyyy):</label>
         <input
@@ -50,10 +51,10 @@ const Form = () => {
           id="dob"
           value={dob}
           onChange={(e) => setDob(e.target.value)}
-          style={{ width: '30%', fontSize: '14px', backgroundColor: '#BAD6EB', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
+          style={{ width: '30%', fontSize: '14px', backgroundColor: '#ffffff', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
         />
         <label htmlFor="gender">Gender:</label>
-        <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)} style={{ width: '30%', fontSize: '14px', backgroundColor: '#BAD6EB', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}>
+        <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)} style={{ width: '30%', fontSize: '14px', backgroundColor: '#ffffff', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}>
           <option value=""></option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -65,14 +66,14 @@ const Form = () => {
           id="employmentStatus"
           value={employmentStatus}
           onChange={(e) => setEmploymentStatus(e.target.value)}
-          style={{ width: '30%', fontSize: '14px', backgroundColor: '#BAD6EB', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
+          style={{ width: '30%', fontSize: '14px', backgroundColor: '#ffffff', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }}
         />
         <label htmlFor="address">Address:</label>
         <textarea
           id="address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          style={{ width: '30%', height: '100px', fontSize: '14px', backgroundColor: '#BAD6EB', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }} // Example styling
+          style={{ width: '30%', height: '100px', fontSize: '14px', backgroundColor: '#ffffff', border: '1px solid #ccc', borderRadius: '4px', padding: '8px' }} // Example styling
         ></textarea>
         <label htmlFor="consent">Consent:</label>
         <div style={{ display: 'flex', alignItems: 'center' }}>
