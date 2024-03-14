@@ -2,7 +2,7 @@
 @import '../../index.scss';
 
 .navbar {
-    background-color: var(--black);
+    background-color:  #d4dee6;
     padding-block: 0.6rem;
     position: relative;
 
@@ -37,12 +37,12 @@
         }
 
         a {
-            color: var(--cultured);
+            color: #0072AA;
             text-transform: uppercase;
             transition: all 0.3s ease;
 
             &:hover {
-                color: var(--spanish-gray);
+                color:  #A4D0A0;
             }
         }
     }
